@@ -6,39 +6,38 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Quiénes Somos — Widows Sons Río Uruguay',
+  title: 'Quiénes Somos — Widows Sons Río Cuareim',
 };
 ---
 
 <Layout metadata={metadata}>
+  <!-- 1. IDENTIDAD INTEGRADA DE LA FRONTERA NORTE -->
   <Hero
     tagline="Nuestra Identidad"
     image={{
       src: '~/assets/images/img1.png',
-      alt: 'Widows Sons Río Uruguay',
+      alt: 'Widows Sons Río Cuareim',
     }}
   >
     <Fragment slot="title">
       Widows Sons <br />
-      <span class="text-[#d4af37] dark:text-[#d4af37]">Capítulo Río Uruguay</span>
+      <span class="text-[#d4af37] dark:text-[#d4af37]">Capítulo Río Cuareim</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Somos una hermandad de Maestros Masones activos que, bajo los principios universales de la Masonería, 
-      encuentran en el motociclismo un vehículo de unión, servicio y presencia en la comunidad. 
-      Nuestro nombre, <strong>“Hijos de la Viuda”</strong>, representa nuestro compromiso con la lealtad, 
-      la integridad, la solidaridad y el honor.
+      Somos una hermandad de Maestros Masones activos que, bajo los principios universales de la Masonería y con el respaldo del Gran Capítulo de Uruguay, encuentran en el motociclismo un vehículo de unión, servicio y presencia en el extremo norte del país. Nuestro nombre evoca las aguas del Río Cuareim, símbolo de mística, hermandad e integración en nuestras fronteras.
     </Fragment>
   </Hero>
 
+  <!-- 2. NUESTRA MISIÓN -->
   <Features3
     title="Nuestra Misión"
-    subtitle="La fraternidad no se declama, se demuestra."
+    subtitle="La fraternidad y la asistencia social no conocen límites geográficos."
     columns={4}
     items={[
-      { title: 'Filantropía', description: 'Nuestro Propósito', icon: 'tabler:heart-handshake' },
-      { title: 'Educación', description: 'Nuestra Base', icon: 'tabler:book' },
-      { title: 'Social', description: 'Nuestro Impacto', icon: 'tabler:users' },
+      { title: 'Filantropía', description: 'Acción en el Norte', icon: 'tabler:heart-handshake' },
+      { title: 'Integración', description: 'Nuestra Identidad', icon: 'tabler:world-latitude' },
+      { title: 'Social', description: 'Impacto Comunitario', icon: 'tabler:users' },
       { title: 'Fraternidad', description: 'Nuestro Motor', icon: 'tabler:engine' },
     ]}
     classes={{
@@ -46,40 +45,26 @@ const metadata = {
     }}
   />
 
+  <!-- 3. PRESENCIA TERRITORIAL CENTRALIZADA EN EL NORTE -->
   <Features3
-    title="Presencia en la Región y el País"
-    subtitle="Consolidando un espacio que trasciende fronteras geográficas y fortalece los vínculos humanos en el litoral oeste y todo el Uruguay."
+    title="Presencia en la Frontera Norte"
+    subtitle="Consolidando un espacio de integración fraternal y apoyo comunitario en los límites geográficos de nuestro territorio."
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Río Negro (Sede)',
-        description: 'Base de nuestras operaciones y gestión institucional del Capítulo.',
+        title: 'Artigas (Sede)',
+        description: 'Base principal de nuestras operaciones, asambleas y gestión institucional del Capítulo.',
         icon: 'tabler:map-pin-filled',
       },
       {
-        title: 'Artigas',
-        description: 'Representación en el extremo norte, uniendo a los hermanos de la frontera.',
+        title: 'Bella Unión',
+        description: 'Extensión de nuestro compromiso solidario y presencia activa en la triple frontera.',
         icon: 'tabler:map-pin',
       },
       {
-        title: 'Salto',
-        description: 'Extensión de nuestra presencia fraternal y compromiso con la comunidad salteña.',
-        icon: 'tabler:map-pin',
-      },
-      {
-        title: 'Paysandú',
-        description: 'Punto de encuentro y coordinación para nuestras rutas y paradas solidarias.',
-        icon: 'tabler:map-pin',
-      },
-      {
-        title: 'Soriano',
-        description: 'Fortaleciendo la cadena de unión en el sur de nuestra zona de influencia.',
-        icon: 'tabler:map-pin',
-      },
-      {
-        title: 'Alcance Nacional',
-        description: 'Colaboramos con otros Capítulos para extender el espíritu filantrópico a todo el Uruguay.',
+        title: 'Rutas de Integración',
+        description: 'Establecemos puentes y estrechamos lazos de fraternidad con los hermanos de la región.',
         icon: 'tabler:world-latitude',
       },
     ]}
@@ -88,28 +73,30 @@ const metadata = {
     }}
   />
 
+  <!-- 4. NUESTROS VALORES MASONICOS -->
   <Steps2
     title="Nuestros Valores"
-    subtitle="Los pilares masónicos que guían cada kilómetro de nuestra marcha."
+    subtitle="Los pilares masónicos que guían cada kilómetro de nuestra marcha norteña."
     items={[
       {
-        title: 'Fraternidad y Servicio',
-        description: 'Unión genuina entre hermanos y vocación constante de ayuda desinteresada.',
+        title: 'Fraternidad sin Límites',
+        description: 'Unión genuina entre hermanos que trasciende barreras geográficas y culturales.',
       },
       {
-        title: 'Respeto y Compromiso',
-        description: 'Respeto por las personas e instituciones, con acción social sostenida.',
+        title: 'Solidaridad Territorial',
+        description: 'Compromiso social sostenido para atender las necesidades particulares de la comunidad artiguense.',
       },
       {
-        title: 'Honor',
-        description: 'Coherencia absoluta entre lo que somos, decimos y hacemos.',
+        title: 'Honor y Rectitud',
+        description: 'Coherencia absoluta entre nuestros juramentos en el taller y nuestra conducta en las rutas públicas.',
       },
     ]}
   />
 
+  <!-- 5. NUESTRO COMPROMISO FRONTERIZO -->
   <Steps2
     title="Nuestro Compromiso"
-    subtitle="No somos solo un grupo de motociclistas. Somos una hermandad que actúa, construye y deja huella."
+    subtitle="No somos solo un grupo de motociclistas. Somos una hermandad que actúa, construye y deja huella en el norte uruguayo."
     isReversed={true}
     callToAction={{
       text: 'Ver nuestras actividades',
@@ -118,17 +105,17 @@ const metadata = {
     items={[
       {
         title: 'Acción Concreta',
-        description: 'Transformamos los principios en hechos visibles.',
+        description: 'Transformamos los principios masónicos en hechos visibles de ayuda civil.',
         icon: 'tabler:tool',
       },
       {
-        title: 'Vínculo Humano',
-        description: 'Generamos impacto uniendo las dos orillas del Río Uruguay.',
+        title: 'Vínculo Social',
+        description: 'Generamos un impacto positivo colaborando estrechamente con las comunidades del Río Cuareim.',
         icon: 'tabler:users-group',
       },
       {
-        title: 'Referente Regional',
-        description: 'Ejemplo de civismo y fraternidad en la vía pública.',
+        title: 'Conducta Ejemplar',
+        description: 'Máximo ejemplo de civismo, fraternidad y respeto mutuo en la vía pública.',
         icon: 'tabler:certificate',
       },
     ]}
@@ -137,26 +124,28 @@ const metadata = {
     }}
   />
 
+  <!-- 6. ÁMBITO DE ACCIÓN -->
   <Features2
     title="Dónde nos encontramos"
     tagline="Territorio"
     columns={3}
     items={[
       {
-        title: 'Litoral Oeste',
-        description: 'Zona principal de influencia y rodadas.',
+        title: 'Rutas del Norte',
+        description: 'Nuestra zona principal de rodadas, recorridos oficiales y patrullas.',
       },
       {
         title: 'Sedes Masónicas',
-        description: 'Puntos de encuentro institucional.',
+        description: 'Puntos de encuentro institucional bajo la regularidad de la orden.',
       },
       {
-        title: 'Rutas Solidarias',
-        description: 'Presencia itinerante en comunidades locales.',
+        title: 'Paradas Solidarias',
+        description: 'Presencia itinerante y campañas de asistencia en localidades vulnerables.',
       },
     ]}
   />
 
+  <!-- 7. CONTACTO ADAPTADO -->
   <Features2
     title="Contacto Institucional"
     tagline="Comunícate"
@@ -164,12 +153,12 @@ const metadata = {
     items={[
       {
         title: 'Mensaje Directo',
-        description: 'Coordinación de apoyo y campañas solidarias.',
+        description: 'Coordinación de apoyo, donaciones locales y campañas solidarias en Artigas.',
         icon: 'tabler:messages',
       },
       {
         title: 'Membresía',
-        description: 'Información para Maestros Masones interesados.',
+        description: 'Información y recepción de solicitudes para Maestros Masones de la región interesados.',
         icon: 'tabler:id-badge-2',
       },
     ]}
