@@ -1,6 +1,6 @@
 site:
-  name: Widows Sons Rio Uruguay
-  site: 'https://www.wsriouruguay.com'
+  name: Widows Sons Rio Cuareim
+  site: 'https://www.wsriocuareim.com'
   base: '/'
   trailingSlash: false
 
@@ -9,16 +9,16 @@ site:
 # Metadatos SEO
 metadata:
   title:
-    default: Widows Sons — Capítulo Rio Uruguay
+    default: Widows Sons — Capítulo Rio Cuareim
     template: '%s — Widows Sons'
-  description: 'Sitio oficial de los Widows Sons, Capítulo Rio Uruguay. Fraternidad, motociclismo y caridad en el litoral uruguayo.'
+  description: 'Sitio oficial de los Widows Sons, Capítulo Rio Cuareim. Fraternidad, motociclismo y caridad en el litoral uruguayo.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Widows Sons Rio Uruguay
+    site_name: Widows Sons Rio Cuareim
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/default-rc.png'
         width: 1200
         height: 628
     type: website
