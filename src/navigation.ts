@@ -5,8 +5,8 @@ export const headerData = {
     { text: 'Inicio', href: '/' },
     { text: 'Quiénes Somos', href: getPermalink('/about') },
     { text: 'Eventos', href: getBlogPermalink() },
-    { text: 'Colabora', href: getPermalink('/colabora') }, //  <-- Nueva sección
-    { text: 'Contacto', href: '/#contacto' },
+    { text: 'Colabora', href: getPermalink('/colabora') },
+    { text: 'Gran Capítulo 🏛️', href: 'https://www.wsuruguay.com' },
   ],
   actions: [{ text: 'Contacto', href: '/#contacto', variant: 'primary' }],
   showToggleTheme: false,
@@ -15,18 +15,17 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Capítulo',
+      title: 'Nuestra Orden',
       links: [
+        { text: 'Gran Capítulo de Uruguay', href: 'https://www.wsuruguay.com' },
         { text: 'Quiénes Somos', href: getPermalink('/about') },
-        { text: 'Eventos', href: getBlogPermalink() },
-        { text: 'Membresía', href: '/#contacto' },
+        { text: 'Eventos del Norte', href: getBlogPermalink() },
       ],
     },
     {
-      title: 'Comunidad',
+      title: 'Capítulos Hermanos',
       links: [
-        { text: 'Instagram', href: 'https://instagram.com/wsriouruguay' },
-        { text: 'Facebook', href: 'https://facebook.com/tu_cuenta' },
+        { text: 'Capítulo Río Uruguay', href: 'https://www.wsriouruguay.com' },
       ],
     },
   ],
@@ -36,10 +35,10 @@ export const footerData = {
     { text: 'Honor', href: '#' },
   ],
   socialLinks: [
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://instagram.com/wsriouruguay' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://facebook.com/tu_cuenta' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://instagram.com/tu_cuenta_riocuareim' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://facebook.com/tu_cuenta_riocuareim' },
   ],
   footNote: `
-    Diseñado por STEB · Widows Sons Rio Uruguay © 2026
+    Diseñado por STEB · Widows Sons Río Cuareim © 2026
   `,
 };
