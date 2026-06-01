@@ -2,41 +2,41 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import { Icon } from 'astro-icon/components';
 
-// Importación de imágenes
+// Importación de las imágenes oficiales del repositorio
 import img1 from '~/assets/images/img1.png';
 import img2 from '~/assets/images/img2.png';
 
 const metadata = {
-  title: 'Widows Sons — Capítulo Rio Uruguay',
+  title: 'Widows Sons — Capítulo Río Cuareim',
   ignoreTitleTemplate: true,
 };
 
-// Forzamos el cambio de nombre en el footer directamente aquí
+// Configuración del pie de página para este repositorio
 const footerData = {
   secondaryLinks: [
-    { text: 'Diseñado por Steb · Widows Sons Rio Uruguay © 2026', href: '#' },
+    { text: 'Diseñado por Steb · Widows Sons Río Cuareim © 2026', href: '#' },
   ],
 };
 ---
 
 <Layout metadata={metadata} footerData={footerData}>
 
+  <!-- 1. HERO CON PANTALLA COMPLETA Y ENFOQUE FRONTERIZO -->
   <section class="relative h-screen flex items-center justify-center bg-black overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img src={img1.src} alt="Fondo" class="w-full h-full object-cover opacity-60" />
+      <img src={img1.src} alt="Fondo Oficial Río Cuareim" class="w-full h-full object-cover opacity-60" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black"></div>
     </div>
     <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
       <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 uppercase" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.9);">
-        WIDOWS SONS <br /> <span class="text-[#d4af37]">CAPÍTULO RIO URUGUAY</span>
+        WIDOWS SONS <br /> <span class="text-[#d4af37]">CAPÍTULO RÍO CUAREIM</span>
       </h1>
       <p class="text-xl md:text-2xl text-zinc-200 mb-10 font-medium">
-        Asociación Internacional de Maestros Masones Motociclistas.
+        Asociación Internacional de Maestros Masones Motociclistas · Artigas, Uruguay.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="#contacto" class="bg-[#d4af37] text-black font-bold py-4 px-10 rounded-full no-underline uppercase tracking-widest hover:bg-white transition-colors">Unirse a la Ruta</a>
@@ -45,20 +45,21 @@ const footerData = {
     </div>
   </section>
 
+  <!-- 2. TRADICIÓN, CAMINO E INTEGRACIÓN (REEMPLAZA A RÍO URUGUAY) -->
   <Content
     id="quienes-somos"
     isReversed
     tagline="Nuestra Historia"
-    title="Tradición y Camino"
+    title="Integración y Camino"
     items={[
       {
         title: 'Presencia Institucional',
-        description: 'Consolidamos la presencia de los Widows Sons en el Uruguay, manteniendo la regularidad y los principios que rigen a nuestra hermandad a nivel global.',
+        description: 'Consolidamos la presencia de los Widows Sons en el norte uruguayo, bajo la legítima Carta Patente otorgada por el Gran Capítulo de Uruguay.',
         icon: 'tabler:building-community',
       },
       {
         title: 'Atención Directa',
-        description: 'Si eres un Hermano buscando contacto o tienes una consulta institucional, puedes escribirnos directamente.',
+        description: 'Si eres un Hermano buscando contacto en el norte de la república o tienes una consulta institucional, puedes escribirnos directamente.',
         icon: 'tabler:message-circle',
         callToAction: {
           text: 'Enviar Mensaje',
@@ -68,7 +69,7 @@ const footerData = {
       },
       {
         title: 'Membresía y Consulta',
-        description: 'Información sobre requisitos de ingreso para Maestros Masones y actividades de nuestros Capítulos.',
+        description: 'Información sobre requisitos de ingreso para Maestros Masones y actividades de nuestro Capítulo en la región.',
         icon: 'tabler:shield-check',
         callToAction: {
           text: 'Consultar Membresía',
@@ -79,76 +80,79 @@ const footerData = {
     ]}
     image={{
       src: img2,
-      alt: 'Detalle institucional Widows Sons',
+      alt: 'Detalle institucional Widows Sons Río Cuareim',
     }}
   >
     <Fragment slot="content">
       <div class="text-muted dark:text-slate-400">
         <p class="mb-4">
-          La llegada de los <strong>Widows Sons</strong> al Uruguay representó un hito en la historia del motociclismo masónico regional. Lo que comenzó como una expresión de libertad en las rutas de Estados Unidos a finales de los 90, encontró en nuestra tierra un terreno fértil basado en la rica tradición masónica del país.
+          La expansión de los <strong>Widows Sons</strong> hacia el norte del país representó un paso clave para la descentralización y la integración de la orden en las rutas nacionales. Lo que nació compartiendo una pasión compartida, encontró en el departamento de Artigas un pilar sólido fundado en la regularidad.
         </p>
         <p class="mb-4">
-          A nivel nacional, la importancia de la hermandad radica en su capacidad de unir a Hermanos de distintos Orientes bajo una pasión común, fortaleciendo la cadena de unión más allá de las puertas de los Templos. El <strong>Capítulo Rio Uruguay</strong> surge como una pieza clave en esta estructura, descentralizando la actividad y llevando el mensaje de fraternidad al litoral.
+          Nuestra identidad está profundamente ligada al entorno del Río Cuareim, un símbolo que lejos de dividir, representa un lazo de unión, intercambio y presencia solidaria para todas las comunidades de la frontera.
         </p>
         <p>
-          Hoy, ser parte de esta asociación en Uruguay significa portar un parche que es sinónimo de auxilio al necesitado y respeto por las leyes cívicas, reafirmando que el verdadero camino del Maestro se construye kilómetro a kilómetro, con honor y discreción.
+          Hoy, portar este parche en el norte significa defender el civismo, el auxilio mutuo y el respeto por las leyes cívicas, reafirmando que el verdadero camino del Maestro se construye en cada kilómetro recorrido con honor y discreción.
         </p>
       </div>
       
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-8 mb-2">
-        Legado en el Uruguay
+        Mística del Norte
       </h3>
       <p class="text-lg text-[#d4af37] font-semibold italic">
-        Una hermandad que trasciende las fronteras, unida por el asfalto y la virtud.
+        Una hermandad que une caminos, donde el asfalto y la virtud no conocen fronteras.
       </p>
     </Fragment>
   </Content>
 
+  <!-- 3. PILARES DEL CAPÍTULO -->
   <Features
     id="pilares"
     tagline="Valores"
     title="Pilares del Capítulo"
     items={[
-      { title: 'Fraternidad', description: 'Lazos indisolubles entre Hermanos.', icon: 'tabler:users' },
-      { title: 'Libertad', description: 'El motociclismo como expresión de libertad personal.', icon: 'tabler:wind' },
-      { title: 'Caridad', description: 'Asistencia a la viuda y el huérfano.', icon: 'tabler:heart' },
-      { title: 'Internacional', description: 'Parte de una hermandad global.', icon: 'tabler:world' },
-      { title: 'Maestría', description: 'Integrado por Maestros Masones.', icon: 'tabler:certificate' },
-      { title: 'Pasión', description: 'Motociclismo seguro y compañerismo.', icon: 'tabler:motorbike' },
+      { title: 'Fraternidad', description: 'Lazos indisolubles entre Hermanos del norte.', icon: 'tabler:users' },
+      { title: 'Integración', description: 'El Río Cuareim como puente de unión cultural.', icon: 'tabler:world-latitude' },
+      { title: 'Caridad', description: 'Asistencia a la viuda, el huérfano y los necesitados.', icon: 'tabler:heart' },
+      { title: 'Regularidad', description: 'Bajo el aval del Gran Capítulo de Uruguay.', icon: 'tabler:certificate' },
+      { title: 'Unidad', description: 'Cohesión con nuestros capítulos hermanos.', icon: 'tabler:shield-check' },
+      { title: 'Pasión', description: 'Motociclismo seguro y compañerismo en la ruta.', icon: 'tabler:motorbike' },
     ]}
   />
 
+  <!-- 4. CRÓNICAS Y RODADAS (FEED DE EVENTOS) -->
   <BlogLatestPosts
     id="eventos"
-    title="Próximos Eventos y Rodadas"
-    subtitle="Participa en nuestras actividades y salidas oficiales del Capítulo."
+    title="Próximos Eventos y Rodadas del Norte"
+    subtitle="Participa en nuestras actividades y salidas oficiales en el departamento de Artigas."
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-black"></div>
     </Fragment>
   </BlogLatestPosts>
 
+  <!-- 5. SECCIÓN DE CONTACTO DEL NORTE -->
   <section id="contacto" class="relative py-16 bg-black border-t border-[#d4af37]/10">
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
       <div>
         <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-widest mb-4">¡Escríbenos!</h2>
         <p class="text-zinc-400 text-lg mb-8">
-          Si tienes consultas sobre el Capítulo o nuestras actividades benéficas, completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad.
+          Si tienes consultas sobre el Capítulo o nuestras actividades benéficas en la región norte, completa el formulario y nos pondremos en contacto contigo a la brevedad.
         </p>
         
         <div class="space-y-6">
           <div class="flex items-start">
             <Icon name="tabler:map-pin" class="w-6 h-6 text-[#d4af37] mr-4" />
             <div>
-              <h4 class="text-white font-bold">Presencia en el Litoral</h4>
-              <p class="text-zinc-400">Artigas, Salto, Paysandú, Rio Negro, Soriano — Uruguay</p>
+              <h4 class="text-white font-bold">Presencia en la Frontera</h4>
+              <p class="text-zinc-400">Artigas, Bella Unión y rutas de influencia del Río Cuareim — Uruguay</p>
             </div>
           </div>
           <div class="flex items-start">
             <Icon name="tabler:message-circle" class="w-6 h-6 text-[#d4af37] mr-4" />
             <div>
               <h4 class="text-white font-bold">Atención Directa</h4>
-              <p class="text-zinc-400">Canal oficial de comunicación vía web.</p>
+              <p class="text-zinc-400">Canal oficial de comunicación vía web para el norte del país.</p>
             </div>
           </div>
         </div>
@@ -176,10 +180,11 @@ const footerData = {
     </div>
   </section>
 
+  <!-- 6. CIERRE Y LEMA DEL CAPÍTULO -->
   <section class="py-16 bg-black border-t border-[#d4af37]/20">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 uppercase tracking-widest">
-        Widows Sons <span class="text-[#d4af37]">Rio Uruguay</span>
+        Widows Sons <span class="text-[#d4af37]">Río Cuareim</span>
       </h2>
       <p class="text-xl text-zinc-400 max-w-2xl mx-auto italic font-light">
         "No rodamos para escapar de la vida, sino para que la vida no se nos escape."
