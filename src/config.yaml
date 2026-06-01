@@ -9,9 +9,9 @@ site:
 # Metadatos SEO
 metadata:
   title:
-    default: Widows Sons — Capítulo Rio Cuareim
+    default: Widows Sons — Chapter Rio Cuareim
     template: '%s — Widows Sons'
-  description: 'Sitio oficial de los Widows Sons, Capítulo Rio Cuareim. Fraternidad, motociclismo y caridad en el litoral uruguayo.'
+  description: 'Sitio oficial de los Widows Sons, Chapter Rio Cuareim. Fraternidad, motociclismo y caridad en el litoral uruguayo.'
   robots:
     index: true
     follow: true
