@@ -1,0 +1,180 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Quiénes Somos — Widows Sons Río Uruguay',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Nuestra Identidad"
+    image={{
+      src: '~/assets/images/img1.png',
+      alt: 'Widows Sons Río Uruguay',
+    }}
+  >
+    <Fragment slot="title">
+      Widows Sons <br />
+      <span class="text-[#d4af37] dark:text-[#d4af37]">Capítulo Río Uruguay</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Somos una hermandad de Maestros Masones activos que, bajo los principios universales de la Masonería, 
+      encuentran en el motociclismo un vehículo de unión, servicio y presencia en la comunidad. 
+      Nuestro nombre, <strong>“Hijos de la Viuda”</strong>, representa nuestro compromiso con la lealtad, 
+      la integridad, la solidaridad y el honor.
+    </Fragment>
+  </Hero>
+
+  <Features3
+    title="Nuestra Misión"
+    subtitle="La fraternidad no se declama, se demuestra."
+    columns={4}
+    items={[
+      { title: 'Filantropía', description: 'Nuestro Propósito', icon: 'tabler:heart-handshake' },
+      { title: 'Educación', description: 'Nuestra Base', icon: 'tabler:book' },
+      { title: 'Social', description: 'Nuestro Impacto', icon: 'tabler:users' },
+      { title: 'Fraternidad', description: 'Nuestro Motor', icon: 'tabler:engine' },
+    ]}
+    classes={{
+      icon: 'text-[#d4af37]',
+    }}
+  />
+
+  <Features3
+    title="Presencia en la Región y el País"
+    subtitle="Consolidando un espacio que trasciende fronteras geográficas y fortalece los vínculos humanos en el litoral oeste y todo el Uruguay."
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Río Negro (Sede)',
+        description: 'Base de nuestras operaciones y gestión institucional del Capítulo.',
+        icon: 'tabler:map-pin-filled',
+      },
+      {
+        title: 'Artigas',
+        description: 'Representación en el extremo norte, uniendo a los hermanos de la frontera.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Salto',
+        description: 'Extensión de nuestra presencia fraternal y compromiso con la comunidad salteña.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Paysandú',
+        description: 'Punto de encuentro y coordinación para nuestras rutas y paradas solidarias.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Soriano',
+        description: 'Fortaleciendo la cadena de unión en el sur de nuestra zona de influencia.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Alcance Nacional',
+        description: 'Colaboramos con otros Capítulos para extender el espíritu filantrópico a todo el Uruguay.',
+        icon: 'tabler:world-latitude',
+      },
+    ]}
+    classes={{
+      icon: 'text-[#d4af37]',
+    }}
+  />
+
+  <Steps2
+    title="Nuestros Valores"
+    subtitle="Los pilares masónicos que guían cada kilómetro de nuestra marcha."
+    items={[
+      {
+        title: 'Fraternidad y Servicio',
+        description: 'Unión genuina entre hermanos y vocación constante de ayuda desinteresada.',
+      },
+      {
+        title: 'Respeto y Compromiso',
+        description: 'Respeto por las personas e instituciones, con acción social sostenida.',
+      },
+      {
+        title: 'Honor',
+        description: 'Coherencia absoluta entre lo que somos, decimos y hacemos.',
+      },
+    ]}
+  />
+
+  <Steps2
+    title="Nuestro Compromiso"
+    subtitle="No somos solo un grupo de motociclistas. Somos una hermandad que actúa, construye y deja huella."
+    isReversed={true}
+    callToAction={{
+      text: 'Ver nuestras actividades',
+      href: '/blog',
+    }}
+    items={[
+      {
+        title: 'Acción Concreta',
+        description: 'Transformamos los principios en hechos visibles.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Vínculo Humano',
+        description: 'Generamos impacto uniendo las dos orillas del Río Uruguay.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Referente Regional',
+        description: 'Ejemplo de civismo y fraternidad en la vía pública.',
+        icon: 'tabler:certificate',
+      },
+    ]}
+    classes={{
+      icon: 'text-[#d4af37]',
+    }}
+  />
+
+  <Features2
+    title="Dónde nos encontramos"
+    tagline="Territorio"
+    columns={3}
+    items={[
+      {
+        title: 'Litoral Oeste',
+        description: 'Zona principal de influencia y rodadas.',
+      },
+      {
+        title: 'Sedes Masónicas',
+        description: 'Puntos de encuentro institucional.',
+      },
+      {
+        title: 'Rutas Solidarias',
+        description: 'Presencia itinerante en comunidades locales.',
+      },
+    ]}
+  />
+
+  <Features2
+    title="Contacto Institucional"
+    tagline="Comunícate"
+    columns={2}
+    items={[
+      {
+        title: 'Mensaje Directo',
+        description: 'Coordinación de apoyo y campañas solidarias.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Membresía',
+        description: 'Información para Maestros Masones interesados.',
+        icon: 'tabler:id-badge-2',
+      },
+    ]}
+    classes={{
+      icon: 'text-[#d4af37]',
+    }}
+  />
+</Layout>
