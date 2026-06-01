@@ -26,7 +26,7 @@ export const footerData = {
     {
       title: 'Chapter Hermanos',
       links: [
-        { text: 'Chapter Río Cuareim', href: 'https://www.wsriocuareim.com' },
+        { text: 'Chapter Río Uruguay', href: 'https://www.wsriouruguay.com' },
       ],
     },
   ],
