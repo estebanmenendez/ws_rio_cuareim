@@ -6,6 +6,7 @@ export const headerData = {
     { text: 'Quiénes Somos', href: getPermalink('/about') },
     { text: 'Eventos', href: getBlogPermalink() },
     { text: 'Colabora', href: getPermalink('/colabora') },
+    { text: 'Contacto', href: '/#contacto' }, // <-- Reintegrado para navegación fluida
     { text: 'Gran Capítulo 🏛️', href: 'https://www.wsuruguay.com' },
   ],
   actions: [{ text: 'Contacto', href: '/#contacto', variant: 'primary' }],
