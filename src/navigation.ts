@@ -7,7 +7,7 @@ export const headerData = {
     { text: 'Eventos', href: getBlogPermalink() },
     { text: 'Colabora', href: getPermalink('/colabora') },
     { text: 'Contacto', href: '/#contacto' }, // <-- Reintegrado para navegación fluida
-    { text: 'Gran Capítulo 🏛️', href: 'https://www.wsuruguay.com' },
+    { text: 'Gran Chapter 🏛️', href: 'https://www.wsuruguay.com' },
   ],
   actions: [{ text: 'Contacto', href: '/#contacto', variant: 'primary' }],
   showToggleTheme: false,
@@ -18,15 +18,15 @@ export const footerData = {
     {
       title: 'Nuestra Orden',
       links: [
-        { text: 'Gran Capítulo de Uruguay', href: 'https://www.wsuruguay.com' },
+        { text: 'Gran Chapter de Uruguay', href: 'https://www.wsuruguay.com' },
         { text: 'Quiénes Somos', href: getPermalink('/about') },
         { text: 'Eventos del Norte', href: getBlogPermalink() },
       ],
     },
     {
-      title: 'Capítulos Hermanos',
+      title: 'Chapter Hermanos',
       links: [
-        { text: 'Capítulo Río Uruguay', href: 'https://www.wsriouruguay.com' },
+        { text: 'Chapter Río Cuareim', href: 'https://www.wsriocuareim.com' },
       ],
     },
   ],
