@@ -1,11 +1,12 @@
 backend:
   name: github
-  repo: estebanmenendez/astrowind
+  repo: estebanmenendez/ws_rio_cuareim # <-- CORREGIDO: El nombre real de tu repositorio
   branch: main
   base_url: https://www.wsriocuareim.com
-  auth_endpoint: /callback  # <-- ESTA ES LA RUTA EXACTA QUE BUSCA TU FUNCIÓN
-  media_folder: "public/assets/images"
-  public_folder: "~/assets/images"
+  auth_endpoint: /callback
+
+media_folder: "public/assets/images"
+public_folder: "~/assets/images"
 
 collections:
   - name: "eventos"
