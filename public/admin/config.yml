@@ -3,7 +3,7 @@ backend:
   repo: estebanmenendez/astrowind
   branch: main
   base_url: https://www.wsriocuareim.com
-  auth_endpoint: /callback  # <-- CAMBIO CLAVE: Apunta directo a tu función de Cloudflare
+  auth_endpoint: https://github.com/login/oauth/authorize
   
 media_folder: "public/assets/images" # Dónde se guardarán las imágenes que suban los administradores
 public_folder: "~/assets/images" # Cómo leerá Astro la ruta de esas imágenes
