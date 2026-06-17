@@ -2,11 +2,10 @@ backend:
   name: github
   repo: estebanmenendez/astrowind
   branch: main
-  base_url: https://www.wsriocuareim.com # <-- Tu web con la carpeta functions/callback.js
-  # ¡La línea auth_endpoint NO va! La borramos por completo.
-
-media_folder: "public/assets/images"
-public_folder: "~/assets/images"
+  base_url: https://www.wsriocuareim.com
+  auth_endpoint: /callback  # <-- ESTA ES LA RUTA EXACTA QUE BUSCA TU FUNCIÓN
+  media_folder: "public/assets/images"
+  public_folder: "~/assets/images"
 
 collections:
   - name: "eventos"
