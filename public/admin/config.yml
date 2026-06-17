@@ -2,8 +2,8 @@ backend:
   name: github
   repo: estebanmenendez/ws_rio_cuareim
   branch: main
-  base_url: https://oauth.decapcms.org # <-- CORREGIDO: El puente también va aquí para evitar el bloqueo de seguridad
-  auth_endpoint: /prod/auth
+  base_url: https://decap-cms-oauth-handler.vercel.app
+  auth_endpoint: /api/auth
 
 media_folder: "public/assets/images"
 public_folder: "~/assets/images"
