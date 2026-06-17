@@ -1,100 +1,92 @@
-import type { APIRoute } from 'astro';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Forzamos a Astro a que trate esta ruta como dinámica (Server-Side Rendering)
-export const prerender = false;
+import { defineConfig } from 'astro/config';
 
-export const GET: APIRoute = async ({ request, locals }) => {
-  const url = new URL(request.url);
-  const code = url.searchParams.get('code');
+import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind';
+import mdx from '@astrojs/mdx';
+import partytown from '@astrojs/partytown';
+import icon from 'astro-icon';
+import compress from 'astro-compress';
+import type { AstroIntegration } from 'astro';
+import cloudflare from '@astrojs/cloudflare'; 
 
-  // Si no hay código de autorización, devolvemos un error limpio
-  if (!code) {
-    return new Response(
-      JSON.stringify({ error: 'Falta el código de autorización de GitHub' }),
-      { status: 400, headers: { 'Content-Type': 'application/json' } }
-    );
-  }
+import astrowind from './vendor/integration';
 
-  // En Cloudflare + Astro, las variables de entorno se extraen del contexto de ejecución (locals.runtime.env)
-  // Si no existen ahí, cae en el estándar global process.env
-  const runtime = (locals as any).runtime;
-  const CLIENT_ID = runtime?.env?.GITHUB_CLIENT_ID || process.env.GITHUB_CLIENT_ID;
-  const CLIENT_SECRET = runtime?.env?.GITHUB_CLIENT_SECRET || process.env.GITHUB_CLIENT_SECRET;
+import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
-  if (!CLIENT_ID || !CLIENT_SECRET) {
-    return new Response(
-      JSON.stringify({ error: 'Faltan las variables GITHUB_CLIENT_ID o GITHUB_CLIENT_SECRET en Cloudflare' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
-    );
-  }
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-  try {
-    // Intercambiamos el código temporal por un Token de acceso real en GitHub
-    const response = await fetch('https://github.com/login/oauth/access_token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
+const hasExternalScripts = false;
+const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
+  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
+
+export default defineConfig({
+  output: 'hybrid', 
+  adapter: cloudflare(), 
+
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    sitemap(),
+    mdx(),
+    icon({
+      include: {
+        tabler: ['*'],
+        'flat-color-icons': [
+          'template',
+          'gallery',
+          'approval',
+          'document',
+          'advertising',
+          'currency-exchange',
+          'voice-presentation',
+          'business-contact',
+          'database',
+        ],
       },
-      body: JSON.stringify({
-        client_id: CLIENT_ID,
-        client_secret: CLIENT_SECRET,
-        code: code,
-      }),
-    });
+    }),
 
-    const data = await response.json() as { access_token?: string; error?: string };
+    ...whenExternalScripts(() =>
+      partytown({
+        config: { forward: ['dataLayer.push'] },
+      })
+    ),
 
-    // Si GitHub nos devuelve un error, lo mostramos
-    if (data.error || !data.access_token) {
-      return new Response(
-        JSON.stringify({ error: data.error || 'No se pudo obtener el token de acceso' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
-      );
-    }
+    compress({
+      CSS: true,
+      HTML: {
+        'html-minifier-terser': {
+          removeAttributeQuotes: false,
+        },
+      },
+      Image: false,
+      JavaScript: true,
+      SVG: false,
+      Logger: 1,
+    }),
 
-    // El truco definitivo: Devolvemos un script HTML que se ejecuta en la ventana emergente.
-    // Le envía el token a la ventana principal de Decap CMS y luego se cierra sola.
-    const htmlContent = `
-      <!DOCTYPE html>
-      <html lang="es">
-      <head>
-        <meta charset="UTF-8">
-        <title>Autenticando...</title>
-      </head>
-      <body>
-        <p style="text-align: center; font-family: sans-serif; margin-top: 50px;">
-          Conexión exitosa. Redirigiendo al panel de control...
-        </p>
-        <script>
-          (function() {
-            function recieveMessage(e) {
-              // Enviamos el mensaje de éxito con el token a la ventana principal
-              window.opener.postMessage(
-                'authorization:github:success:${JSON.stringify({ token: data.access_token, provider: 'github' })}',
-                e.origin
-              );
-              window.removeEventListener("message", recieveMessage, false);
-              // Cerramos la ventanita flotante de forma automática
-              window.close();
-            }
-            window.addEventListener("message", recieveMessage, false);
-            window.opener.postMessage("authorizing:github", "*");
-          })();
-        </script>
-      </body>
-      </html>
-    `;
+    astrowind({
+      config: './src/config.yaml',
+    }),
+  ],
 
-    return new Response(htmlContent, {
-      status: 200,
-      headers: { 'Content-Type': 'text/html; charset=utf-8' },
-    });
+  image: {
+    domains: ['cdn.pixabay.com'],
+  },
 
-  } catch (err: any) {
-    return new Response(
-      JSON.stringify({ error: 'Error interno en el servidor', details: err.message }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
-    );
-  }
-};
+  markdown: {
+    remarkPlugins: [readingTimeRemarkPlugin],
+    rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
+  },
+
+  vite: {
+    resolve: {
+      alias: {
+        '~': path.resolve(__dirname, './src'), // <-- CORREGIDO: Con comillas para TypeScript
+      },
+    },
+  },
+});
