@@ -2,8 +2,8 @@ backend:
   name: github
   repo: estebanmenendez/ws_rio_cuareim
   branch: main
-  base_url: https://decap-cms-oauth-handler.vercel.app
-  auth_endpoint: /api/auth
+  base_url: https://www.wsriocuareim.com
+  auth_endpoint: /callback
 
 media_folder: "public/assets/images"
 public_folder: "~/assets/images"
