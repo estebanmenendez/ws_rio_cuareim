@@ -7,7 +7,27 @@
     <title>Panel de Administración — Widows Sons Chapter Rio Cuareim</title>
   </head>
   <body>
-    <!-- Incluye el script de Decap CMS -->
+    <script>
+      // Forzamos la configuración del backend directamente en la ventana global
+      // antes de que Decap CMS se ejecute e intente usar Vercel por defecto.
+      window.CMS_MANUAL_INIT = true;
+    </script>
+
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+      // Inicializamos el CMS a mano pasándole tu dominio y endpoint de Cloudflare
+      initCMS({
+        config: {
+          backend: {
+            name: "github",
+            repo: "estebanmenendez/ws_rio_cuareim",
+            branch: "main",
+            base_url: "https://www.wsriocuareim.com",
+            auth_endpoint: "/callback"
+          }
+        }
+      });
+    </script>
   </body>
 </html>
