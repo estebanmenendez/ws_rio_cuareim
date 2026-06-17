@@ -85,7 +85,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '~': path.resolve(__dirname, './src'), // <-- CORREGIDO: Con comillas para TypeScript
+        '~': path.resolve(__dirname, './src'),
       },
     },
   },
