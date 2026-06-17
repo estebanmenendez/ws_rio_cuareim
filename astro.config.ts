@@ -10,7 +10,7 @@ import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
-import cloudflare from '@astrojs/cloudflare'; // <-- 1. IMPORTADO EL ADAPTADOR DE CLOUDFLARE
+import cloudflare from '@astrojs/cloudflare'; 
 
 import astrowind from './vendor/integration';
 
@@ -23,8 +23,8 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  output: 'hybrid', // <-- 2. CAMBIADO A MODO HÍBRIDO (Mantiene estático el blog pero activa functions)
-  adapter: cloudflare(), // <-- 3. ACTIVADO EL ADAPTADOR DE CLOUDFLARE EN EL ENTORNO
+  output: 'hybrid', 
+  adapter: cloudflare(), 
 
   integrations: [
     tailwind({
@@ -85,7 +85,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        ~: path.resolve(__dirname, './src'),
+        '~': path.resolve(__dirname, './src'),
       },
     },
   },
