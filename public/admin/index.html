@@ -7,56 +7,6 @@
     <title>Panel de Administración — Widows Sons Chapter Rio Cuareim</title>
   </head>
   <body>
-    <script>
-      window.CMS_MANUAL_INIT = true;
-    </script>
-
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-    <script>
-      function iniciarCMS() {
-        const targetCMS = window.CMS || window.DecapCMS;
-        
-        if (targetCMS) {
-          targetCMS.init({
-            config: {
-              backend: {
-                name: "github",
-                repo: "estebanmenendez/ws_rio_cuareim",
-                branch: "main",
-                base_url: "https://www.wsriocuareim.com",
-                auth_endpoint: "/callback"
-              },
-              media_folder: "public/assets/images",
-              public_folder: "~/assets/images",
-              collections: [
-                {
-                  name: "eventos",
-                  label: "Eventos y Rodadas",
-                  folder: "src/content/post",
-                  create: true,
-                  slug: "{{slug}}",
-                  fields: [
-                    { label: "Título del Evento", name: "title", widget: "string" },
-                    { label: "Subtítulo / Breve Resumen", name: "excerpt", widget: "string", required: false },
-                    { label: "Fecha de Publicación", name: "publishDate", widget: "datetime" },
-                    { label: "Imagen de Portada", name: "image", widget: "image" },
-                    { label: "Categoría", name: "category", widget: "select", options: ["Eventos", "Rodadas", "Filantropía", "Asambleas"] },
-                    { label: "Etiquetas (Separadas por coma)", name: "tags", widget: "list", required: false },
-                    { label: "Cuerpo del Texto / Detalles", name: "body", widget: "markdown" }
-                  ]
-                }
-              ]
-            }
-          });
-        } else {
-          // Si por alguna razón el script tarda en cargar, reintentamos en 100 milisegundos
-          setTimeout(iniciarCMS, 100);
-        }
-      }
-
-      // Arrancamos la verificación
-      iniciarCMS();
-    </script>
   </body>
 </html>
